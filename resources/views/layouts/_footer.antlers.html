@@ -2,19 +2,14 @@
     <div class="container mx-auto px-5">
         <div class="py-28 mx-auto max-w-6xl flex flex-col lg:flex-row items-center">
             <h3 class="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-                The funkiest music magazine in the web
+              {{ settings:slogan }}
             </h3>
             <div class="flex flex-row justify-end items-right gap-5 lg:w-1/2">
-                <a href="#" >
-                    <img class="h-8 w-8 hover:opacity-75" src="./icons/twitter.svg">
-                </a>
-                <a href="#">
-                    <img class="h-8 w-8 hover:opacity-75" src="./icons/instagram.svg">
-                </a>
-                <a href="#">
-                    <img class="h-8 w-8 hover:opacity-75" src="./icons/facebook.svg">
-                </a>
-                </a>
+                {{ settings:social_media }}
+                  <a href="{{ url }}" title="{{ name }}">
+                      <img class="h-8 w-8 hover:opacity-75" alt="{{ name }}" src="/social_media/{{ media }}.svg">
+                  </a>
+                {{ /settings:social_media }}
             </div>
         </div>
 
