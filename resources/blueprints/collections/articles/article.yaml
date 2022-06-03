@@ -32,6 +32,7 @@ sections:
           display: Summary
           type: textarea
           icon: textarea
+          listable: true
           instructions_position: above
           read_only: false
           validate:
@@ -75,17 +76,18 @@ sections:
     display: Sidebar
     fields:
       -
-        handle: slug
-        field:
-          type: slug
-          localizable: true
-      -
         handle: date
         field:
           type: date
           required: true
           validate:
             - required
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          listable: true
       -
         handle: author
         field:
