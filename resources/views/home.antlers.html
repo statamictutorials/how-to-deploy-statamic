@@ -1,5 +1,10 @@
+{{ articles = switch(
+    (article_sorted_by === 'manual') => selected_articles,
+    () => { collection:articles sort="date:desc" limit="{article_limit ?? 5}" }
+) }}
+
 <section>
-    {{ collection:articles sort="date:desc" limit="1" }}
+    {{ articles limit="1" }}
         <div class="mb-8 md:mb-16">
             <div class="-mx-5 sm:mx-0">
                 <a href="#">
@@ -36,14 +41,14 @@
                 {{ /if }}
             </div>
         </div>
-    {{ /collection:articles }}
+    {{ /articles }}
 </section>
 <section>
     <h2 class="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">More</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-y-16 lg:gap-y-32 gap-x-16 md:gap-x-24 mb-32">
         
-        {{ collection:articles sort="date:desc" offset="1" limit="4" }}
+        {{ articles offset="1" }}
             <article>
                 <div class="mb-5">
                     <div class="-mx-5 sm:mx-0">
@@ -73,7 +78,7 @@
                     </div>
                 {{ /if }}
             </article>
-       {{ /collection:articles }}
+       {{ /articles }}
 
     </div>
 </section>
