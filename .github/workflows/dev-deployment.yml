@@ -4,6 +4,10 @@ on:
   push:
     branches: [ dev ]
     
+env:
+  SERVER: how-to-deploy-statamic
+  SITE: dev.funkkk.com
+    
 jobs:
   deploy-dev:
     runs-on: ubuntu-latest
@@ -30,7 +34,7 @@ jobs:
  
       - name: Deploy Site
         run: |
-          forge server:switch how-to-deploy-statamic
-          forge deploy dev.funkkk.com
+          forge server:switch {{ env.SERVER }}
+          forge deploy {{ env.SITE }}
         env:
           FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
