@@ -27,7 +27,7 @@ jobs:
 
       - name: Require Forge CLI
         run: composer global require laravel/forge-cli
-
+ 
       - name: Deploy Site
         run: |
           forge server:switch how-to-deploy-statamic
