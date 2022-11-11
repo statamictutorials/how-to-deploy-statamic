@@ -1,6 +1,8 @@
 name: Production Deployment
 
-on: workflow_dispatch
+on:
+  release:
+    types: [ published ]
     
 env:
   SERVER: how-to-deploy-statamic
